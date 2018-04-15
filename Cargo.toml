@@ -1,0 +1,6 @@
+[package]
+name = "utcp"
+version = "0.1.0"
+authors = ["Epsilon10 <benjamin.oommen1@gmail.com>"]
+
+[dependencies]
