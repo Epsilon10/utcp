@@ -31,6 +31,10 @@ pub unsafe sendto(socket: CSocket, buf: Buf, len: BufLen, flags: libc::c_int, ad
     libc::recvfrom(socket, buf, len, flags, addr, addrlen)
 } 
 
+pub unsafe recvfrom(socket: CSocket, buf: MutBuf, len: BufLen, flags:: libc::c_int, addr: *mut SockAddr, addr: *mut SockLen) -> CouldFail {
+    libc::recvfrom(socket, buf, len, flags, addr, addrlen)
+}
+
 
 
 #[inline]
