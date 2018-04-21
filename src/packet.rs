@@ -18,19 +18,35 @@ pub struct IpV4Header {
     identification: u16, 
     flags_offset: u16,
     liftime: u8,
-    protocl: u8,
+    protocol: u8,
     checksum: u8,
     source_addr: u32, // source ip addr
     dest_addr: u32,
-    options: Some(u8),
-    padding: Some(u8)
+    options: Option<u32>,
+    padding: Option<u32>
     
 
 }
 
 pub struct Packet<T> {
-    header: 
+    header: IpV4Header,
+    packet:  T
 }
+
+impl<T> Packet<T> {
+    pub fn new<T, H>(packet: T, header: H) -> Packet {
+        Packet {
+            header,
+            packet
+        }
+    }
+
+    pub fn window(&self) -> u16{
+
+    }
+}
+
+
 
 
 
